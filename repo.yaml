@@ -1,13 +1,12 @@
-kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
 metadata:
-  name: guestbook
+  name: demo-service
   namespace: clusters
 spec:
-  repo: https://github.com/kliu513/app-rollout-demo.git
+  repo: https://github.com/kliu513/app-rollout-demo
   branch: main
   targetNamespace: default
-  clientSecretName: basic-auth-secret
   paths:
   - helm
   targets:
