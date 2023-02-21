@@ -4,16 +4,15 @@ targetCustomizations:
 - name: ring0
   helm:
     values:
-      image:
-        tag: 2.7.0
+      replicas: 3
   clusterSelector:
     matchLabels:
       group: ring0
 - name: ring1
   helm:
     values:
-      image:
-        tag: 3.7.0
+      serviceType: LoadBalancer
+      replicas: 3
   clusterSelector:
     matchLabels:
       group: ring1
