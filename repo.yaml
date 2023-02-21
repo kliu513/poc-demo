@@ -1,0 +1,20 @@
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: guestbook
+  namespace: clusters
+spec:
+  repo: https://github.com/kliu513/app-rollout-demo
+  branch: main
+  targetNamespace: default
+  paths:
+  - helm
+  targets:
+  - name: ring0
+    clusterSelector:
+      matchLabels:
+        group: ring0
+  - name: ring1
+    clusterSelector:
+      matchLabels:
+        group: ring1
