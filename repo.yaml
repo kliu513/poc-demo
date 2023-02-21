@@ -4,9 +4,10 @@ metadata:
   name: guestbook
   namespace: clusters
 spec:
-  repo: https://github.com/kliu513/app-rollout-demo
+  repo: https://github.com/kliu513/app-rollout-demo.git
   branch: main
   targetNamespace: default
+  clientSecretName: basic-auth-secret
   paths:
   - helm
   targets:
